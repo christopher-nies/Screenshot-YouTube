@@ -176,7 +176,7 @@ function AddScreenshotButton() {
 	var ytpRightControls = document.getElementsByClassName("ytp-right-controls")[0];
 	if (ytpRightControls) {
 		ytpRightControls.prepend(screenshotButton);
-		ytpRightControls.prepend(uploadButton);
+		// ytpRightControls.prepend(uploadButton);
 	}
 
 	chrome.storage.sync.get('playbackSpeedButtons', function (result) {
