@@ -110,7 +110,10 @@ async function UploadScreenshot(blob, title) {
 			headers: {
 				"Authorization": Auth,
 				// Note: Do not manually set content-type for FormData
-				"x-zipline-image-compression-percent": "80"
+				"x-zipline-file-extension": "png",
+				"x-zipline-original-name": "true",
+				"x-zipline-format": "random",
+				"x-zipline-image-compression-percent": "80",
 			},
 			body: formData
 		});
@@ -167,8 +170,6 @@ function CaptureAndUploadScreenshot() {
 	// Always use PNG for upload
 	canvas.toBlob(async function (blob) {
 		await UploadScreenshot(blob, title);
-		// Also copy to clipboard for convenience
-		// await ClipboardBlob(blob);
 	}, 'image/png');
 }
 

@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
-	"name": "Screenshot YouTube by CN",
-	"version": "2.4.5",
+	"name": "Screenshot YouTube by CNI",
+	"version": "2.4.6",
 	"description": "Take a screenshot of any YouTube video with one click.",
 	"icons": {
 		"16": "icon-16.png",
