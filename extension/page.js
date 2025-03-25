@@ -110,10 +110,11 @@ async function UploadScreenshot(blob, title) {
 			headers: {
 				"Authorization": Auth,
 				// Note: Do not manually set content-type for FormData
-				"x-zipline-file-extension": "png",
+				// "x-zipline-file-extension": "png",
+				// compression converts automatically to *png !
+				"x-zipline-image-compression-percent": "80",
 				"x-zipline-original-name": "true",
 				"x-zipline-format": "random",
-				"x-zipline-image-compression-percent": "80",
 			},
 			body: formData
 		});
