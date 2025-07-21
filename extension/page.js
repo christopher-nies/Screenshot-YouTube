@@ -90,7 +90,7 @@ async function UploadScreenshot(blob, title) {
 	// Get the stored upload URL and Auth from chrome.storage
 	await new Promise((resolve) => {
 		chrome.storage.sync.get(['UploadUrl', 'UploadAuth'], function(result) {
-			Url = result.UploadUrl || "";
+			Url = result.UploadUrl || jpeg
 			Auth = result.UploadAuth || "";
 			resolve();
 		});
@@ -111,8 +111,7 @@ async function UploadScreenshot(blob, title) {
 				"Authorization": Auth,
 				// Note: Do not manually set content-type for FormData
 				// "x-zipline-file-extension": "png",
-				// compression converts automatically to *png !
-				"x-zipline-image-compression-percent": "80",
+				// compression converts automatically to *jpeg !
 				"x-zipline-original-name": "true",
 				"x-zipline-format": "random",
 			},
